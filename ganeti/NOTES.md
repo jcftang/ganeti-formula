@@ -4,6 +4,7 @@ See short notes from
 
     http://wiki.adyxax.org/Miscellaneous/Ganeti
     http://docs.ganeti.org/ganeti/2.12/html/install.html#configuring-the-network
+    https://nsrc.org/workshops/2014/sanog23-virtualization/raw-attachment/wiki/Agenda/ex-ganeti-install.htm
 
 Creating a cluster...
 
@@ -32,3 +33,10 @@ Getting thie ganeti-os-noop package makes it easier to create instances with no 
 See
 
     https://github.com/grnet/ganeti-os-noop
+
+Installing from a CD?
+
+    gnt-instance add -t plain -o noop -s 3GB -B memory=128M --no-install --no-start --no-ip-check --no-name-check -H kvm:vnc_bind_address=0.0.0.0,boot_order=cdrom,cdrom_image_path=/root/linux.iso root-vm3
+
+# echo 'xyzzy' >/etc/ganeti/vnc-cluster-password
+# gnt-cluster modify -H kvm:vnc_password_file=/etc/ganeti/vnc-cluster-password
