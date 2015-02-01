@@ -1,0 +1,18 @@
+{% set map = {
+    'Ubuntu': {
+        'pkgs_deps': ['qemu',
+                 'python-augeas',
+                 'libpython2.7']
+    },
+    'Debian': {
+        'pkgs_deps': ['qemu',
+                 'python-augeas',
+                 'libpython2.7']
+    }
+} %}
+
+{% if grains.get('saltversion', '').startswith('0.17') %}
+{% set ganeti = salt['grains.filter_by'](map, merge=salt['pillar.get']('ganeti:lookup'), base='default') %}
+{% else %}
+{% set ganeti = map.get(grains.os) %}
+{% endif %}
