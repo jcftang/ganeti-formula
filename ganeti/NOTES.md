@@ -17,7 +17,7 @@ Add new instance
 
 PXE Boot an instance
 
-    gnt-instance start --hypervisor-parameters boot_order=network root-vm-1.corp
+    gnt-instance start --hypervisor-parameters boot_order=network root-vm-1
 
 Rebooting
 
@@ -26,3 +26,9 @@ Rebooting
 Shutdown
 
     gnt-instance shutdown --timeout=0 root-vm-1
+
+Getting thie ganeti-os-noop package makes it easier to create instances with no OS install, this means something like cobbler/foreman can be used instead to kick off fresh installs of VM's
+
+See
+
+    https://github.com/grnet/ganeti-os-noop
