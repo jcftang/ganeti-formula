@@ -38,5 +38,7 @@ Installing from a CD?
 
     gnt-instance add -t plain -o noop -s 3GB -B memory=128M --no-install --no-start --no-ip-check --no-name-check -H kvm:vnc_bind_address=0.0.0.0,boot_order=cdrom,cdrom_image_path=/root/linux.iso root-vm3
 
-# echo 'xyzzy' >/etc/ganeti/vnc-cluster-password
-# gnt-cluster modify -H kvm:vnc_password_file=/etc/ganeti/vnc-cluster-password
+Locking the vnc console
+
+    echo 'xyzzy' >/etc/ganeti/vnc-cluster-password
+    gnt-cluster modify -H kvm:vnc_password_file=/etc/ganeti/vnc-cluster-password
